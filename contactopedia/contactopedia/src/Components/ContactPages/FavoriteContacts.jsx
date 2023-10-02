@@ -1,9 +1,12 @@
-const FavoriteContacts = () => {
+import Contact from "./Contact";
+
+const FavoriteContacts = (props) => {
+  console.log(props);
   return (
     <div>
-      <button className="btn btn-secondary form-control">
-        Favorite Contact
-      </button>
+      {props.contacts.map((contact, index) => (
+        <Contact contact={contact} key={index}></Contact>
+      ))}
     </div>
   );
 };
